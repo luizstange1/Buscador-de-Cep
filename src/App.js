@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { FiSearch } from "react-icons/fi";
+import "./styles.css";
 
 function App() {
+  const [input, setInput] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 className="title">Buscador de CEP</h1>
+
+      <div className="containerInput">
+        <input
+          type="text"
+          placeholder="Digite seu CEP..."
+          value={input}
+        ></input>
+
+        <button className="buttonSearch">
+          <FiSearch size={25} color="#FFF" />
+        </button>
+      </div>
+
+      <main className="main">
+        <h2>CEP: 88701-519</h2>
+
+        <span>Rua Teste</span>
+        <span>Complemento</span>
+        <span>Santo Antonio de Pádua</span>
+        <span>Tubarão - SC</span>
+      </main>
     </div>
   );
 }
